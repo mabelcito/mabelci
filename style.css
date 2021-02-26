@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.ir-arriba {
+    display: none;
+    padding: 10px;
+    font-size: 18px;
+    background: rgb(45, 22, 197);
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+/* Barra */
+.barra {
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    background: rgb(45, 22, 197);
+    font-family: 'Ubuntu', sans-serif;
+}
+.barra .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.barra .logo a {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.barra .menu li {
+    list-style: none;
+    display: inline-block;
+}
+.barra .menu li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.barra .menu li a:hover{
+    color: blueviolet;
+}
+/* Barrita para moviles */
+.barra-btn {
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+/* Inicio */
+.inicio {
+    display: flex;
+    height: 100vh;
+    color: rgb(57, 32, 220);
+    min-height: 500px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.inicio .max-width{
+    margin: auto 0 auto 40px;
+    display: flex;
+    width: 100%;
+    height: 600px;
+    justify-content: space-between;
+    align-items: center;
+}
+.inicio .max-width img{
+    width: 500px;
+    animation: ease-in animat 1s;
+}
+@keyframes animat{
+    0%{
+        transform: scale(0);
+    }100%{
+        transform: scale(1);
+    }
+}
+.inicio .inicio-content .texto_1{
+    font-size: 65px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.inicio .inicio-content .texto_2{
+    font-size: 60px;
+}
+.inicio .inicio-content .texto_3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.inicio .inicio-content .texto_3 span{
+    color: blueviolet;
+    font-weight: 600;
+}
+
+/* Mensaje */
+section {
+    padding: 100px 0;
+}
+
+.mensaje {
+    font-family: 'Poppins', sans-serif;
+}
+.mensaje .titulo{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.mensaje .titulo::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 90px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+.mensaje .mensaje-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.mensaje .mensaje-content .left{
+    width: 45%;
+}
+.mensaje .mensaje-content .left img{
+    height: 410px;
+    width: 410px;
+    object-fit: cover;
+}
+.mensaje .mensaje-content .right{
+    width: 55%;
+}
+.mensaje .mensaje-content .right .texto{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/* Media para celulares o acomodador */
+@media (max-width: 1300px){
+    .inicio .max-width{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1104px){
+    .mensaje .mensaje-content .left img
+    {
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px){
+    .max-width {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px){
+    .barra-btn{
+        display: block;
+        z-index: 999;
+    }
+    .barra .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: rgba(80, 70, 174, 0.981);
+        text-align: center;
+        padding-top: 80px;
+    }
+    .barra .menu.active{
+        left: 0;
+    }
+    .barra .menu li{
+        display: block;
+    }
+    .barra .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .inicio .max-width{
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        height: 720px;
+    }
+    .inicio .max-width img{
+        width: 500px;
+    }
+    .inicio .inicio-content .texto_2{
+        font-size: 65px;
+    }
+    .inicio .inicio-content .texto_3{
+        font-size: 35px;
+    }
+    .mensaje .mensaje-content .column
+    {
+        width: 100%;
+    }
+    .mensaje .mensaje-content .left
+    {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .mensaje .mensaje-content .right
+    {
+        flex: 100%;
+    }
+}
+@media (max-width: 690px){
+    .max-width {
+        padding: 0 23px;
+    }
+    .inicio .inicio-content .texto_2{
+        font-size: 60px;
+    }
+    .inicio .inicio-content .texto_3{
+        font-size: 32px;
+    }
+}
+@media (max-width: 500px){
+    .inicio .inicio-content .texto_2{
+        font-size: 50px;
+    }
+    .inicio .inicio-content .texto_3{
+        font-size: 27px;
+    }
+}
